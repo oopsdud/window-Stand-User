@@ -53,7 +53,7 @@ QTabWidget::pane { border: 0; background: transparent; }
 QTabBar::tab { background: transparent; padding: 12px 23px; color: #a59cb7;
               border-bottom: 3px solid transparent; margin-bottom: 12px; }
 QTabBar::tab:selected { color: #e8cb83; border-bottom: 3px solid #d8b76b; font-weight: 600; }
-QLineEdit, QPlainTextEdit, QTextBrowser, QSpinBox, QComboBox {
+QLineEdit, QPlainTextEdit, QTextBrowser, QSpinBox, QComboBox, QListWidget {
     background: #24202f; border: 1px solid #51465f; border-radius: 9px; padding: 9px;
     selection-background-color: #68508a; selection-color: #ffffff;
 }

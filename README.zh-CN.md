@@ -57,7 +57,32 @@
 
 ## 界面预览
 
-以下为**真实组件搭配示例内容**生成的截图，不代表真实模型任务已经执行成功；未加载个人配置、API Key 或历史。首图将实际桌宠和快捷输入组件放在展示背景上。
+以下截图来自**真实应用组件**。文件演示实际执行了临时工作目录的列举、读取、摘要写入和回读校验，步骤由截图脚本驱动，并非模型决策。授权和定时任务为界面示例，没有执行桌面点击或到时动作；未加载个人配置、API Key 或私人历史。
+
+### 从观察、执行到结果，全程可见
+
+执行时查看具体步骤，完成后检查输出。这次本地工具演示全程不移动鼠标。
+
+<table>
+<tr><th>1 · 观察目录与读取内容</th><th>2 · 写入摘要并核验结果</th></tr>
+<tr><td><a href="docs/images/task-running.png"><img src="docs/images/task-running.png" alt="本地文件演示执行中，显示观察与读取步骤" width="550"></a></td><td><a href="docs/images/task-result.png"><img src="docs/images/task-result.png" alt="摘要文件写入并回读校验后的完成结果" width="550"></a></td></tr>
+</table>
+
+### 定时任务就在普通任务页中
+
+<img src="docs/images/scheduled-task.png" alt="普通任务页展开稍后执行区域，显示待执行任务" width="1100">
+
+### 操作前授权，完成后回看轨迹
+
+<table>
+<tr><th>批准一次具体桌面动作</th><th>查看持久化执行记录</th></tr>
+<tr><td><a href="docs/images/desktop-approval.png"><img src="docs/images/desktop-approval.png" alt="单次桌面操作授权卡片示例" width="480"></a></td><td><a href="docs/images/task-history.png"><img src="docs/images/task-history.png" alt="本地工具演示保存在 SQLite 中的任务与执行轨迹" width="550"></a></td></tr>
+</table>
+
+双列图片均可点击查看原图。页首横幅使用实际桌宠和快捷输入组件，搭配展示背景。
+
+<details>
+<summary><strong>展开查看工作台和模型设置</strong></summary>
 
 ### 普通任务与稍后执行，共用一个工作台
 
@@ -66,6 +91,8 @@
 ### 大脑与视觉模型独立配置
 
 <img src="docs/images/model-roles.png" alt="大脑与视觉模型配置，凭据字段为空" width="1100">
+
+</details>
 
 <details>
 <summary><strong>查看按用途分组的虚拟机设置</strong></summary>

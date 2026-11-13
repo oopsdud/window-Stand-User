@@ -57,7 +57,32 @@ After the guest executor is online, enable on-demand operation. Tasks can start 
 
 ## Screenshots
 
-These captures use **real application widgets with fixture content**, not recordings of a completed model task. No personal settings, credentials, or private history are loaded. The banner arranges the actual pet and quick-input widgets on a presentation surface.
+These captures use **real application widgets**. The file demo actually lists and reads a temporary workspace, writes a summary, and reads it back to verify the result. Its steps are driven by the capture script, not a model. Approval and scheduling are illustrative states; no desktop input or scheduled action is executed. No personal settings, credentials, or private history are loaded.
+
+### Follow the task from observation to result
+
+Read the steps as they happen, then inspect the output. This local demo runs without moving the mouse.
+
+<table>
+<tr><th>1 · Observe and read</th><th>2 · Write and verify</th></tr>
+<tr><td><a href="docs/images/task-running.png"><img src="docs/images/task-running.png" alt="Running local file demo with observation and read steps" width="550"></a></td><td><a href="docs/images/task-result.png"><img src="docs/images/task-result.png" alt="Verified summary file and completed task output" width="550"></a></td></tr>
+</table>
+
+### Schedule work in the same task page
+
+<img src="docs/images/scheduled-task.png" alt="A pending task in the expanded later-tasks section of the normal workspace" width="1100">
+
+### Keep control and revisit the trace
+
+<table>
+<tr><th>Approve a concrete desktop action</th><th>Review persisted execution history</th></tr>
+<tr><td><a href="docs/images/desktop-approval.png"><img src="docs/images/desktop-approval.png" alt="Example one-action desktop approval card" width="480"></a></td><td><a href="docs/images/task-history.png"><img src="docs/images/task-history.png" alt="SQLite-backed history from the local file demo" width="550"></a></td></tr>
+</table>
+
+Click any paired image to view it at full size. The companion banner above uses the actual pet and quick-input widgets on a presentation surface.
+
+<details>
+<summary><strong>Explore the workspace and model settings</strong></summary>
 
 ### One workspace for immediate and scheduled tasks
 
@@ -66,6 +91,8 @@ These captures use **real application widgets with fixture content**, not record
 ### Independent planner and vision configuration
 
 <img src="docs/images/model-roles.png" alt="Planner and vision configuration with empty credential fields" width="1100">
+
+</details>
 
 <details>
 <summary><strong>Explore the grouped virtual-machine controls</strong></summary>
