@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v4
+      - name: Check Python source
+        run: uvx ruff==0.12.1 check windows_use frontend scripts
+
+  test:
+    name: Test (Python ${{ matrix.python-version }})
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: uv sync --locked --extra desktop --extra dev
+
+      - name: Run offline regression tests
+        env:
+          ANONYMIZED_TELEMETRY: 'false'
+          LITELLM_LOCAL_MODEL_COST_MAP: 'True'
+          QT_QPA_PLATFORM: offscreen
+          PYTHONUTF8: '1'
+        run: >-
+          uv run pytest tests/test_timers.py tests/test_execution.py tests/test_vm.py
+          tests/test_distribution.py tests/test_progress_recovery.py tests/test_cognition.py
+          tests/test_safety.py tests/test_window_switch.py tests/test_multimonitor.py
+          tests/test_desktop_quiet.py tests/test_imports.py tests/unit/agent/test_agent_service.py
+          tests/unit/agent/agent_tools/test_agent_tools_views.py tests/unit/agent/agent_registry
+          frontend/tests -q
